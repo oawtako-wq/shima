@@ -1,72 +1,58 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>التكنولوجيا الحديثة</title>
-<style>
-body {
-    font-family: Arial;
-    background-color: whitesmoke;
-    direction: rtl;
-    text-align: right; /* النصوص من اليمين */
-}
-
-/* العنوان الرئيسي */
-#main-title {
-    text-align: center;
-    color: darkblue;
-    background-color: lightblue;
-    padding: 10px;
-}
-
-/* العناوين الفرعية */
-.sub-title {
-    color: rgb(177, 51, 4);
-    background-color: whitesmoke;
-    padding: 5px;
-    margin-top: 15px;
-}
-
-/* الفقرات */
-p {
-    color: green; /* هنا جعلنا النصوص باللون الأخضر */
-    font-size: 16px;
-}
-</style>
+<title>نموذج داخل جدول - صفحة 2</title>
 </head>
 <body>
 
-<h1 id="main-title">التكنولوجيا الحديثة</h1>
+<form>
+  <table style="width: 100%; border-collapse: collapse;">
 
-<h2 class="sub-title">تعريف التكنولوجيا</h2>
-<p>التكنولوجيا هي استخدام العلم والمعرفة لتسهيل حياة الإنسان وتطويرها.</p>
+    <tr>
+      <td style="width: 25%;">الاسم:</td>
+      <td style="width: 75%;"><input type="text"></td>
+    </tr>
 
-<h2 class="sub-title">أهمية التكنولوجيا</h2>
-<p>تساعد التكنولوجيا في التعليم والاتصال والعمل وتوفير الوقت والجهد.</p>
+    <tr>
+      <td>كلمة المرور:</td>
+      <td><input type="password"></td>
+    </tr>
 
-<h2 class="sub-title">التكنولوجيا في التعليم</h2>
-<p>أصبحت الدراسة أسهل بفضل الحواسيب والهواتف والإنترنت.</p>
+    <tr>
+      <td>الجنس:</td>
+      <td>
+        <label><input type="radio" name="gender" value="male"> ذكر</label>
+        &nbsp;&nbsp;
+        <label><input type="radio" name="gender" value="female"> أنثى</label>
+      </td>
+    </tr>
 
-<h2 class="sub-title">التكنولوجيا في الطب</h2>
-<p>تساعد الأجهزة الطبية الحديثة في تشخيص الأمراض بدقة وعلاجها بسرعة.</p>
+    <!-- هوايات مختلفة -->
+    <tr>
+      <td>الهوايات:</td>
+      <td>
+        <label><input type="checkbox" value="drawing"> الرسم</label><br>
+        <label><input type="checkbox" value="travel"> السفر</label><br>
+        <label><input type="checkbox" value="music"> الموسيقى</label>
+      </td>
+    </tr>
 
-<h2 class="sub-title">التكنولوجيا في التواصل</h2>
-<p>جعلت العالم قرية صغيرة من خلال وسائل التواصل الاجتماعي.</p>
+    <tr>
+      <td>الملاحظات:</td>
+      <td><textarea rows="4" cols="30"></textarea></td>
+    </tr>
 
-<h2 class="sub-title">التكنولوجيا في الصناعة</h2>
-<p>ساهمت في إنتاج أسرع وأدق وأقل تكلفة.</p>
+    <tr>
+      <td></td>
+      <td>
+        <button type="submit">إرسال</button>
+        <button type="reset">حذف</button>
+      </td>
+    </tr>
 
-<h2 class="sub-title">التكنولوجيا في الحياة اليومية</h2>
-<p>توجد التكنولوجيا في كل بيت، من الهاتف إلى الأجهزة المنزلية الذكية.</p>
-
-<h2 class="sub-title">الذكاء الاصطناعي</h2>
-<p>هو أحد أهم مجالات التكنولوجيا الحديثة، يساعد في تحليل البيانات واتخاذ القرارات.</p>
-
-<h2 class="sub-title">الأمن السيبراني</h2>
-<p>يحمي المعلومات من السرقة والاختراق في عالم الإنترنت.</p>
-
-<h2 class="sub-title">مستقبل التكنولوجيا</h2>
-<p>يتجه العالم نحو المزيد من التطور والاختراعات التي تخدم الإنسان.</p>
+  </table>
+</form>
 
 </body>
 </html>
