@@ -2,57 +2,169 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>نموذج داخل جدول - صفحة 2</title>
+<title>نموذج داخل جدول - محسن</title>
+
+<style>
+  body {
+    font-family: "Tahoma", Arial, sans-serif;
+    background: #eef3f7;
+    padding: 40px;
+  }
+
+  .form-container {
+    width: 70%;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1e3d59;
+  }
+
+  table {
+    width: 100%;
+    border-spacing: 0 12px; /* مسافة بين الصفوف */
+  }
+
+  td:first-child {
+    width: 25%;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    vertical-align: top;
+  }
+
+  td:last-child {
+    width: 75%;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #b0bec5;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: #1e88e5;
+    outline: none;
+    box-shadow: 0 0 5px #90caf9;
+  }
+
+  .btn-area {
+    text-align: left;
+    padding-top: 10px;
+  }
+
+  button {
+    padding: 10px 25px;
+    margin-left: 10px;
+    font-size: 17px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .btn-submit {
+    background: #1e90ff;
+    color: white;
+  }
+
+  .btn-reset {
+    background: #ff5252;
+    color: white;
+  }
+
+  /* تنسيق خيارات checkbox و radio */
+  label {
+    font-size: 16px;
+  }
+
+</style>
 </head>
 <body>
 
-<form>
-  <table style="width: 100%; border-collapse: collapse;">
+<div class="form-container">
+  <h2>نموذج إدخال البيانات</h2>
 
-    <tr>
-      <td style="width: 25%;">الاسم:</td>
-      <td style="width: 75%;"><input type="text"></td>
-    </tr>
+  <form id="myForm">
+    <table>
 
-    <tr>
-      <td>كلمة المرور:</td>
-      <td><input type="password"></td>
-    </tr>
+      <tr>
+        <td>الاسم:</td>
+        <td><input type="text" id="name"></td>
+      </tr>
 
-    <tr>
-      <td>الجنس:</td>
-      <td>
-        <label><input type="radio" name="gender" value="male"> ذكر</label>
-        &nbsp;&nbsp;
-        <label><input type="radio" name="gender" value="female"> أنثى</label>
-      </td>
-    </tr>
+      <tr>
+        <td>كلمة المرور:</td>
+        <td><input type="password" id="password"></td>
+      </tr>
 
-    <!-- هوايات مختلفة -->
-    <tr>
-      <td>الهوايات:</td>
-      <td>
-        <label><input type="checkbox" value="drawing"> الرسم</label><br>
-        <label><input type="checkbox" value="travel"> السفر</label><br>
-        <label><input type="checkbox" value="music"> الموسيقى</label>
-      </td>
-    </tr>
+      <tr>
+        <td>الجنس:</td>
+        <td>
+          <label><input type="radio" name="gender" value="male"> ذكر</label>
+          &nbsp;&nbsp;
+          <label><input type="radio" name="gender" value="female"> أنثى</label>
+        </td>
+      </tr>
 
-    <tr>
-      <td>الملاحظات:</td>
-      <td><textarea rows="4" cols="30"></textarea></td>
-    </tr>
+      <tr>
+        <td>الهوايات:</td>
+        <td>
+          <label><input type="checkbox" name="hobby" value="الرسم"> الرسم</label><br>
+          <label><input type="checkbox" name="hobby" value="السفر"> السفر</label><br>
+          <label><input type="checkbox" name="hobby" value="الموسيقى"> الموسيقى</label>
+        </td>
+      </tr>
 
-    <tr>
-      <td></td>
-      <td>
-        <button type="submit">إرسال</button>
-        <button type="reset">حذف</button>
-      </td>
-    </tr>
+      <tr>
+        <td>الملاحظات:</td>
+        <td><textarea id="notes" rows="4"></textarea></td>
+      </tr>
 
-  </table>
-</form>
+      <tr>
+        <td></td>
+        <td class="btn-area">
+          <button type="submit" class="btn-submit">إرسال</button>
+          <button type="reset" class="btn-reset">حذف</button>
+        </td>
+      </tr>
+
+    </table>
+  </form>
+</div>
+
+<script>
+  document.getElementById("myForm").addEventListener("submit", function(e) {
+    e.preventDefault(); 
+
+    let name = document.getElementById("name").value.trim();
+    let password = document.getElementById("password").value.trim();
+
+    if (name === "") {
+      alert("يرجى إدخال الاسم.");
+      return;
+    }
+
+    if (password.length < 4) {
+      alert("كلمة المرور يجب أن تكون 4 أحرف أو أكثر.");
+      return;
+    }
+
+    alert("تم إرسال البيانات بنجاح ✔");
+  });
+</script>
 
 </body>
 </html>
